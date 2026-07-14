@@ -1,0 +1,10 @@
+# Node module
+node_modules/
+
+# Next
+.next/
+
+# environment variables
+.env.local
+.env
+*.env

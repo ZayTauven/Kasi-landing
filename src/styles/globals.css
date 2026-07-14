@@ -1,0 +1,303 @@
+@import "tailwindcss";
+
+@import "tw-animate-css";
+@plugin '@tailwindcss/typography';
+
+@variant dark (&:is(.dark *));
+
+:root {
+  /* Kasi — palette pétrole/orange dérivée du logo */
+  --background: oklch(0.99 0.005 210);
+  --foreground: oklch(0.24 0.035 230);
+  --card: oklch(1 0 0);
+  --card-foreground: oklch(0.24 0.035 230);
+  --popover: oklch(1 0 0);
+  --popover-foreground: oklch(0.24 0.035 230);
+  --primary: oklch(0.52 0.09 220);
+  --primary-foreground: oklch(0.985 0.005 210);
+  --secondary: oklch(0.94 0.02 215);
+  --secondary-foreground: oklch(0.3 0.04 228);
+  --muted: oklch(0.955 0.012 210);
+  --muted-foreground: oklch(0.5 0.03 225);
+  --accent: oklch(0.94 0.02 215);
+  --accent-foreground: oklch(0.3 0.04 228);
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.9 0.015 215);
+  --input: oklch(0.9 0.015 215);
+  --ring: oklch(0.52 0.09 220);
+
+  /* Orange Kasi — accent signature (pins, marqueurs de vitesse) */
+  --kasi: oklch(0.78 0.15 70);
+  --kasi-foreground: oklch(0.3 0.07 60);
+  --kasi-ink: oklch(0.6 0.135 65);
+
+  --chart-1: oklch(0.52 0.09 220);
+  --chart-2: oklch(0.78 0.15 70);
+  --chart-3: oklch(0.398 0.07 227.392);
+  --chart-4: oklch(0.828 0.189 84.429);
+  --chart-5: oklch(0.769 0.188 70.08);
+
+  --sidebar: oklch(0.985 0.005 210);
+  --sidebar-foreground: oklch(0.24 0.035 230);
+  --sidebar-primary: oklch(0.52 0.09 220);
+  --sidebar-primary-foreground: oklch(0.985 0.005 210);
+  --sidebar-accent: oklch(0.94 0.02 215);
+  --sidebar-accent-foreground: oklch(0.3 0.04 228);
+  --sidebar-border: oklch(0.9 0.015 215);
+  --sidebar-ring: oklch(0.52 0.09 220);
+
+  --radius: 10px;
+
+  --shadow-2xs: 0 1px 3px 0px oklch(0.3 0.04 230 / 0.05);
+  --shadow-xs: 0 1px 3px 0px oklch(0.3 0.04 230 / 0.05);
+  --shadow-sm: 0 1px 3px 0px oklch(0.3 0.04 230 / 0.1), 0 1px 2px -1px oklch(0.3 0.04 230 / 0.1);
+  --shadow: 0 1px 3px 0px oklch(0.3 0.04 230 / 0.1), 0 1px 2px -1px oklch(0.3 0.04 230 / 0.1);
+  --shadow-md: 0 1px 3px 0px oklch(0.3 0.04 230 / 0.1), 0 2px 4px -1px oklch(0.3 0.04 230 / 0.1);
+  --shadow-lg: 0 1px 3px 0px oklch(0.3 0.04 230 / 0.1), 0 4px 6px -1px oklch(0.3 0.04 230 / 0.1);
+  --shadow-xl: 0 1px 3px 0px oklch(0.3 0.04 230 / 0.1), 0 8px 10px -1px oklch(0.3 0.04 230 / 0.1);
+  --shadow-2xl: 0 1px 3px 0px oklch(0.3 0.04 230 / 0.25);
+
+  --font-dm-sans: "dmSans", sans-serif;
+
+  --font-sans: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: ui-serif, Georgia, Cambria, "Times New Roman", Times, serif;
+  --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+
+  --display-family: var(--font-bricolage), var(--font-sans);
+  --text-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif;
+  --display-weight: 700;
+  --text-weight: 400;
+}
+
+.dark {
+  --background: oklch(0.16 0.028 235);
+  --foreground: oklch(0.96 0.008 210);
+  --card: oklch(0.205 0.03 233);
+  --card-foreground: oklch(0.96 0.008 210);
+  --popover: oklch(0.205 0.03 233);
+  --popover-foreground: oklch(0.96 0.008 210);
+  --primary: oklch(0.72 0.085 210);
+  --primary-foreground: oklch(0.17 0.035 235);
+  --secondary: oklch(0.26 0.03 232);
+  --secondary-foreground: oklch(0.96 0.008 210);
+  --muted: oklch(0.24 0.028 233);
+  --muted-foreground: oklch(0.67 0.02 220);
+  --accent: oklch(0.26 0.03 232);
+  --accent-foreground: oklch(0.96 0.008 210);
+  --destructive: oklch(0.704 0.191 22.216);
+  --border: oklch(1 0 0 / 12%);
+  --input: oklch(1 0 0 / 16%);
+  --ring: oklch(0.72 0.085 210);
+
+  --kasi: oklch(0.78 0.15 70);
+  --kasi-foreground: oklch(0.3 0.07 60);
+  --kasi-ink: oklch(0.8 0.14 72);
+
+  --chart-1: oklch(0.72 0.085 210);
+  --chart-2: oklch(0.78 0.15 70);
+  --chart-3: oklch(0.769 0.188 70.08);
+  --chart-4: oklch(0.627 0.265 303.9);
+  --chart-5: oklch(0.645 0.246 16.439);
+
+  --sidebar: oklch(0.205 0.03 233);
+  --sidebar-foreground: oklch(0.96 0.008 210);
+  --sidebar-primary: oklch(0.72 0.085 210);
+  --sidebar-primary-foreground: oklch(0.17 0.035 235);
+  --sidebar-accent: oklch(0.26 0.03 232);
+  --sidebar-accent-foreground: oklch(0.96 0.008 210);
+  --sidebar-border: oklch(1 0 0 / 12%);
+  --sidebar-ring: oklch(0.72 0.085 210);
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-destructive-foreground: var(--destructive-foreground);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+
+  --color-kasi: var(--kasi);
+  --color-kasi-foreground: var(--kasi-foreground);
+  --color-kasi-ink: var(--kasi-ink);
+
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+
+  --radius-xs: calc(var(--radius) - 4px);
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) * 2 - 4px);
+  --radius-2xl: calc(var(--radius) * 2);
+  --radius-3xl: calc(var(--radius) * 3);
+  --radius-4xl: calc(var(--radius) * 4);
+
+  --shadow-2xs: var(--shadow-2xs);
+  --shadow-xs: var(--shadow-xs);
+  --shadow-sm: var(--shadow-sm);
+  --shadow: var(--shadow);
+  --shadow-md: var(--shadow-md);
+  --shadow-lg: var(--shadow-lg);
+  --shadow-xl: var(--shadow-xl);
+  --shadow-2xl: var(--shadow-2xl);
+
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1400px; /* default is 1536px */
+
+  --font-sans: var(--font-sans);
+  --font-serif: var(--font-serif);
+  --font-mono: var(--font-mono);
+
+  --font-display: var(--display-family);
+  --font-text: var(--text-family);
+  --font-weight-display: var(--display-weight);
+  --font-weight-text: var(--text-weight);
+
+  --animate-accordion-down: accordion-down 0.2s ease-out;
+  --animate-accordion-up: accordion-up 0.2s ease-out;
+
+  @keyframes accordion-down {
+    from {
+      height: 0;
+    }
+    to {
+      height: var(--radix-accordion-content-height);
+    }
+  }
+  @keyframes accordion-up {
+    from {
+      height: var(--radix-accordion-content-height);
+    }
+    to {
+      height: 0;
+    }
+  }
+}
+
+@utility container {
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+  @media (width >= 1400px) {
+    max-width: 1220px;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentColor);
+  }
+  ::selection {
+    background: color-mix(in oklch, var(--kasi) 35%, transparent);
+  }
+}
+
+@layer utilities {
+  body,
+  .font-text {
+    font-family: var(--font-text);
+    font-weight: var(--text-weight);
+  }
+  h1,
+  h2,
+  .font-display {
+    font-family: var(--font-display);
+    font-weight: var(--display-weight);
+  }
+  .font-mono {
+    font-family: var(--font-mono), monospace;
+  }
+  /* Pointillés en mouvement — la route Kasi coule vers le pin */
+  .animate-route-x {
+    animation: route-flow-x 1.4s linear infinite;
+  }
+  .animate-route-y {
+    animation: route-flow-y 1.4s linear infinite;
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .animate-route-x,
+    .animate-route-y {
+      animation: none;
+    }
+  }
+}
+
+@keyframes route-flow-x {
+  to {
+    background-position-x: 10px;
+  }
+}
+@keyframes route-flow-y {
+  to {
+    background-position-y: 10px;
+  }
+}
+
+@layer components {
+  button {
+    cursor: pointer;
+  }
+  [class*="border"] {
+    @apply border-border;
+  }
+}
+
+html,
+body {
+  scroll-behavior: smooth;
+}
+body {
+  position: relative;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html,
+  body {
+    scroll-behavior: auto;
+  }
+  *,
+  ::before,
+  ::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
