@@ -62,6 +62,17 @@ const bricolage = Bricolage_Grotesque({
 });
 
 export const metadata: Metadata = {
+  // Base servant a resoudre les URL relatives (og:image, twitter:image).
+  // Sans elle, Next les resout vers http://localhost:3000 et TOUS les apercus
+  // de partage (WhatsApp, LinkedIn, Facebook) sont casses en ligne.
+  // Vercel fournit le domaine de production; il suffira de definir
+  // NEXT_PUBLIC_SITE_URL=https://kasigroupe.com le jour de la bascule.
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ??
+      (process.env.VERCEL_PROJECT_PRODUCTION_URL
+        ? `https://${process.env.VERCEL_PROJECT_PRODUCTION_URL}`
+        : "http://localhost:3000"),
+  ),
   title: {
     default: "Kasi — Courses, livraisons et logistique à Dakar",
     template: "%s | Kasi",

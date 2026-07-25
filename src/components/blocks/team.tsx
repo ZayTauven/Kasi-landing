@@ -12,23 +12,23 @@ type Member = {
 
 const members: Member[] = [
   {
-    name: "Moctar Kipre",
+    name: "Moctar KIPRE",
     role: "Fondateur",
     image: "/kasi/team/moctar-kipre.png",
   },
   {
-    name: "Pierre Cisse",
+    name: "Pierre CISS",
     role: "Équipe fondatrice",
     image: "/kasi/team/pierre-cisse.jpg",
   },
   {
-    name: "Tonux",
+    name: "Tito GBEDJEHA",
     role: "Équipe fondatrice",
-    image: "/kasi/team/tonux.jpg",
+    image: "/kasi/team/tito-gbedjeha.png",
   },
   {
-    name: "Mohamed Zayad",
-    role: "CTO",
+    name: "Mohamed ZAYAD",
+    role: "Équipe fondatrice",
     image: "/kasi/team/mohamed-zayad.jpg",
   },
 ];
